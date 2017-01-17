@@ -10,15 +10,22 @@ $.ajax({
         var lines = ["A", "B", "C", "D", "E", "H"];
         for (var i = 0; i < lines.length; ++i) {
             var div = document.createElement('div');
+            var img = document.createElement('img');
+            var sp1 = document.createElement('span');
+            var sp2 = document.createElement('span');
+            img.src = "../icons/linea_" + lines[i] + ".png";
+            sp1.appendChild(img);
             text = data.find("span#status-line-" + lines[i]).text();
             if (text == "Normal" || text.indexOf("habitual")>-1){
-                div.textContent = "✓";
+                sp2.textContent = "✓";
             } else if (text.indexOf("emora")>-1 || text.indexOf("obras")>-1){
-                div.textContent = "⚠";
+                sp2.textContent = "⚠";
             } else {
-                div.textContent = "❌";
+                sp2.textContent = "❌";
             }
-            div.textContent = lines[i] + ": " + div.textContent
+
+            div.appendChild(sp1);
+            div.appendChild(sp2);
             document.body.appendChild(div);
         }
     }
