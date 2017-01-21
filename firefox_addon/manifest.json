@@ -9,7 +9,7 @@
   "icons": {
     "48": "icons/linea_C.jpg"
   },
-  
+
   "browser_action": {
     "default_icon": "icons/lineaC.jpg",
     "default_title": "Subte",
