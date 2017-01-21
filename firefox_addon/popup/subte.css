@@ -1,0 +1,14 @@
+body {
+    background-color: white;
+    font-size: 200%;
+}
+
+.ok {
+    color: green;
+}
+.warn {
+    color: orange;
+}
+.bad {
+    color: red;
+}

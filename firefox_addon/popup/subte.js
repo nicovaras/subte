@@ -13,6 +13,7 @@ $.ajax({
             } else if (text.indexOf("emora")>-1 || text.indexOf("obras")>-1){
                 selector.text("⚠");
                 selector.addClass('warn');
+
             } else {
                 selector.text("❌");
                 selector.addClass('bad');
