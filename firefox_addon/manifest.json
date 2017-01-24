@@ -7,7 +7,7 @@
   "description": "Estado del subte",
 
   "icons": {
-    "48": "icons/linea_C.jpg"
+    "48": "icons/lineaC.jpg"
   },
 
   "browser_action": {
