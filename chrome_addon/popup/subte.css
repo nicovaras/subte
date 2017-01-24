@@ -1,0 +1,46 @@
+body {
+    background-color: white;
+    font-size: 200%;
+    width:200px;
+    height:150px;
+    padding-left:25px;
+
+}
+
+div.line{
+    width:70px;
+    float: left;
+    margin-left:15px;
+    margin-top:10px;
+}
+
+span{
+    width:40px;
+
+}
+
+span.status{
+    float:right;
+}
+
+.ok {
+    color: green;
+}
+.warn {
+    color: orange;
+}
+.bad {
+    color: red;
+}
+
+.marquee {
+  width: 180px;
+  font-size:16px;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  font-weight:bold;
+  margin-top:15px;
+  padding:5px;
+  margin-left:-10px;
+  background:#f3f3f3;
+}
