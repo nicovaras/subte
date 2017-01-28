@@ -13,7 +13,7 @@ $.ajax({
             if (text == "Normal" || text.indexOf("habitual")>-1){
                 selector.text("✓");
                 selector.addClass('ok');
-            } else if (text.indexOf("emora")>-1 || text.indexOf("obras")>-1){
+            } else if (text.indexOf("imitado") > -1 || text.indexOf("emora")>-1 || text.indexOf("obras")>-1){
                 selector.text("⚠");
                 selector.addClass('warn');
                 fullText +=  lines[i] + ": " + text ;

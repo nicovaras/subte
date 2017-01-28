@@ -2,27 +2,26 @@
 
   "manifest_version": 2,
   "name": "Subte",
-  "version": "0.1",
+  "version": "0.3",
 
   "description": "Estado del subte",
 
   "icons": {
-    "48": "icons/lineaC.jpg"
+    "48": "icons/logo.png"
   },
 
   "browser_action": {
-    "default_icon": "icons/lineaC.jpg",
+    "default_icon": "icons/logo.png",
     "default_title": "Subte",
     "default_popup": "popup/subte.html"
   },
 
-  "permissions": ["http://*/*", "https://*/*"],
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["subte.js"]
-    }
-  ]
+  "permissions": ["http://www.metrovias.com.ar/","alarms"],
+
+  "background": {
+    "scripts": ["popup/jquery-3.1.1.min.js", "background.js"]
+  }
+
 
 }
 

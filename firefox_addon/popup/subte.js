@@ -17,12 +17,11 @@ $.ajax({
                 text.indexOf("obras") > -1) {
                 selector.text("⚠");
                 selector.addClass('warn');
-                fullText += lines[i] + ": " + text;
+                fullText += lines[i] + ": " + text + " ";
             } else {
                 selector.text("✗");
                 selector.addClass('bad');
-                fullText += lines[i] + ": " + text;
-
+                fullText += lines[i] + ": " + text + " ";
             }
         }
 
