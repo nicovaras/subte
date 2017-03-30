@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "Subte",
-  "version": "0.3",
+  "version": "0.7",
 
   "description": "Estado del subte",
 
@@ -16,10 +16,10 @@
     "default_popup": "popup/subte.html"
   },
 
-  "permissions": ["http://www.metrovias.com.ar/","alarms"],
+  "permissions": ["http://www.metrovias.com.ar/","http://subte-data.null.com.ar/","alarms"],
 
   "background": {
-    "scripts": ["popup/jquery-3.1.1.min.js", "background.js"]
+    "scripts": ["popup/jquery-3.1.1.min.js", "helper.js", "background.js"]
   }
 
 
