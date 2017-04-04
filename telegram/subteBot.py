@@ -33,7 +33,7 @@ def handle(msg):
     except Exception, e:
         print e
 
-bot = telepot.Bot('355140692:AAHvJAQuitQbIe0yiQwBxb5LghWHWrAwsuY')
+bot = telepot.Bot('***')
 bot.message_loop(handle)
 print 'I am listening ...'
 while 1:
