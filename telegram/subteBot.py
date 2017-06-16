@@ -42,13 +42,20 @@ def estado(chat_id):
         result.append("{} {}: {}".format(symbol, line, line_data))
     bot.sendMessage(chat_id, "\n".join(result), parse_mode='Markdown')
 
+def randomString():
+    chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz"
+    randomstring = ''
+    for i in range(16):
+        randomstring += random.choice(chars)
+    return randomstring;
+
 def get_tiempos(id_ramal):
     response_data = u'incorrect key'
     headers = {'Referer' : 'https://trenes.sofse.gob.ar/v2_pg/arribos/index.php?ramal='+id_ramal}
     i = 5
     while response_data == u'incorrect key' and i > 0 :
         response_data = requests.get('https://trenes.sofse.gob.ar/v2_pg/arribos/ajax_arribos.php?ramal=' + id_ramal + \
-            '&rnd=DEFGHIJKLMNOPQRS&key=NRVQjcjTUF0I30EVFBDTqdWp%23', 
+            '&rnd=' + randomString() +'&key=NRVQjcjTUF0I30EVFBDTqdWp%23', 
         headers=headers, timeout=5).text
         i -= 1
     return response_data
@@ -96,12 +103,14 @@ def estacion(chat_id, id_ramal, estacion_act):
         respuesta = ''
         for estacion in estaciones:
             if estacion_act == estacion['nombre']:
-                respuesta = estacion['nombre'] + '\n'
+                respuesta = 'Estacion ' + estacion['nombre'] + '\n'
                 table= [['Prox: ', tiempo_to_text(estacion['minutos_1'])], [' Sig: ', tiempo_to_text(estacion['minutos_2'])]]
-                t1 = AsciiTable(table, 'A ' + sentido[0])
+                respuesta += 'A ' + sentido[0] + '\n'
+                respuesta += AsciiTable(table).table
                 table= [['Prox: ', tiempo_to_text(estacion['minutos_3'])], [' Sig: ', tiempo_to_text(estacion['minutos_4'])]]
-                t2 = AsciiTable(table, 'A ' + sentido[1])
-                bot.sendMessage(chat_id, '``` Estacion ' + respuesta + t1.table + '\n' + t2.table + '```', reply_markup=ReplyKeyboardRemove(), parse_mode='Markdown')
+                respuesta += '\nA ' + sentido[1] + '\n'
+                respuesta += AsciiTable(table).table
+                bot.sendMessage(chat_id, '``` ' + respuesta + ' ```', reply_markup=ReplyKeyboardRemove(), parse_mode='Markdown')
                 return
 
 def handle(msg):
